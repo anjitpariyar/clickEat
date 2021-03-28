@@ -1,0 +1,28 @@
+footer{
+	.aside__img{
+		position: relative;
+		img{
+			height: 400px !important;
+			width: auto !important;
+		}
+		ul{
+			@include ul;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 30px;
+			position: absolute;
+			top: 58px;
+			left: 50px;
+			transform: rotate(17deg);
+			a{
+				color: #fff;
+				padding: 0 10px;
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+	}
+	
+}

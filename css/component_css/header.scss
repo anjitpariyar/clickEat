@@ -1,0 +1,77 @@
+@import '../custom';
+@import './component';
+
+$mt : 60px;
+
+body{
+	width: 100%;
+	overflow-x: hidden;
+}
+
+header{
+	position:relative;
+	font-size: 18px;
+
+	.section__rule{
+		padding: 20px 0px;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		z-index: 99;
+		align-items:center;
+	}
+
+	.logo{
+		svg{
+			height: 90px;
+			margin-left: auto;
+			margin-right: auto;
+			display: flex;
+		}
+		
+	}
+	.navbar{
+		padding: 0;
+		flex-grow:2;
+		margin-left: 2 * $mt;
+		.navbar-nav{
+			flex-direction: row;
+		}
+	}
+	.nav__link{
+		padding:0 24px ;
+		text-align: center;
+		@include transition;
+		color: $dark;	
+		&.active, &:hover{
+			color: $primary-color;
+		}
+	}
+	button{
+		@include button;
+		background-color: $secondary-color;
+		color: $dark;
+	}
+
+	.svg--bg{
+		position: absolute;
+	} 
+	.svg--lg{
+		height: 980px;
+		min-height: 500px;
+		top: calc(-900px / 3.5);
+		right: calc(-900px / 2.5);
+		width: auto;
+	}
+	.svg--small{
+		height: 160px;
+		width: auto;
+		top: -60px;
+		left: -60px;
+		circle{
+			fill:$secondary-color;
+		}
+	}
+}
+
+
