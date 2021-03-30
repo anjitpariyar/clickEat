@@ -24,14 +24,19 @@ main{
 		height: 530px;
 		transform: scale(1.15);
 		transform-origin: left bottom;
+		@include transition-in;
 
 		img{
 			@include image;
 			object-fit: contain;
+			-webkit-animation: float 6s linear 3s infinite reverse;
+			animation: float 6s linear 3s infinite reverse;
 		}
 	}
 	.svg--ab{
 		position: absolute;
+		-webkit-animation: float 6s linear 3s infinite alternate;
+		animation: float 6s linear 3s infinite alternate;
 		circle{
 			r:50%;
 		}
@@ -77,6 +82,7 @@ main{
 			min-width: 35%;
 			width: 35%;
 			text-align:left;
+
 		}
 		img{
 			height: 500px;
@@ -120,6 +126,21 @@ main{
 		}
 		button{
 			margin-top: $mt;
+		}
+	}
+}
+.other-page{
+	.screen{
+		img{
+			width: 100%;
+			height: auto;
+			max-height: 70vh;
+			object-fit: cover;
+		}
+	}
+	.works{
+		.card__img{
+			margin:2.5em auto;
 		}
 	}
 }

@@ -23,7 +23,7 @@ header{
 
 	.logo{
 		svg{
-			height: 90px;
+			height: 70px;
 			margin-left: auto;
 			margin-right: auto;
 			display: flex;
@@ -51,6 +51,15 @@ header{
 		@include button;
 		background-color: $secondary-color;
 		color: $dark;
+		img{
+			height: 30px;
+			width: auto;
+			vertical-align: middle;
+			margin-right: 10px;
+		}
+		&:hover{
+			background-color:#fff;
+		}
 	}
 
 	.svg--bg{
