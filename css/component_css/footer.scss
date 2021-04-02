@@ -4,6 +4,10 @@ footer{
 		img{
 			height: 400px !important;
 			width: auto !important;
+			@include responsivemd{
+				width: 100% !important;
+				height: auto !important;
+			}
 		}
 		ul{
 			@include ul;
@@ -15,6 +19,12 @@ footer{
 			top: 58px;
 			left: 50px;
 			transform: rotate(17deg);
+			@include responsivemd{
+				font-size: 19px;
+				position: absolute;
+				top: 30px;
+				left: 15px;
+			}
 			a{
 				color: #fff;
 				padding: 0 10px;
@@ -24,5 +34,38 @@ footer{
 			}
 		}
 	}
-	
+
+	.lower--footer{
+		display: flex;
+		justify-content: space-between;
+		align-items:center;
+		@include responsivelg{
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+		}
+	}
+
+
+	.navbar{
+		padding: 0;
+		.navbar-nav{
+			flex-direction: row;
+			@include responsivemd{
+				flex-direction: column;
+			}
+		}
+	}
+	.nav__link{
+		padding:0 24px ;
+		text-align: center;
+		@include transition;
+		// color: $dark;	
+		font-size: 18px;
+		color:#4E4E4E;
+		white-space: nowrap;
+		&.active, &:hover{
+			color: $primary-color;
+		}
+	}
 }

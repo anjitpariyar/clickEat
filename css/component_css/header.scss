@@ -23,47 +23,54 @@ header{
 
 	.logo{
 		svg{
-			height: 70px;
+			height: 50px;
 			margin-left: auto;
 			margin-right: auto;
 			display: flex;
+			@include responsivemd{
+				height: 30px;
+			}
+		}
+		display: flex;
+		align-items:center;
+		h1{
+			margin-bottom: 0;
+			color: $primary-color;
+			font-size: 30px;
+			margin-left: 12px;
+			@include responsivemd{
+				font-size: 20px;
+			}
 		}
 		
 	}
-	.navbar{
-		padding: 0;
-		flex-grow:2;
-		margin-left: 2 * $mt;
-		.navbar-nav{
-			flex-direction: row;
-		}
-	}
-	.nav__link{
-		padding:0 24px ;
-		text-align: center;
-		@include transition;
-		color: $dark;	
-		&.active, &:hover{
-			color: $primary-color;
-		}
-	}
+	
 	button{
 		@include button;
-		background-color: $secondary-color;
+		background-color:#fff;
+		
 		color: $dark;
 		img{
 			height: 30px;
 			width: auto;
 			vertical-align: middle;
 			margin-right: 10px;
+			@include responsivemd{
+				display: none;
+			}
 		}
 		&:hover{
-			background-color:#fff;
+			img{
+				animation-name: shakeX;
+			}
 		}
 	}
 
 	.svg--bg{
 		position: absolute;
+		@include responsivemd{
+			display: none;
+		}
 	} 
 	.svg--lg{
 		height: 980px;
@@ -71,6 +78,9 @@ header{
 		top: calc(-900px / 3.5);
 		right: calc(-900px / 2.5);
 		width: auto;
+		@include responsivemmd{
+			height: 500px;
+		}
 	}
 	.svg--small{
 		height: 160px;

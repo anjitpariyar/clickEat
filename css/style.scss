@@ -25,18 +25,22 @@ main{
 		transform: scale(1.15);
 		transform-origin: left bottom;
 		@include transition-in;
+		@include responsivemd{
+			transform: scale(1);
+			height: auto;
+		}
 
 		img{
 			@include image;
 			object-fit: contain;
-			-webkit-animation: float 6s linear 3s infinite reverse;
-			animation: float 6s linear 3s infinite reverse;
+			-webkit-animation: float 6s linear 3s infinite alternate;
+			animation: float 6s linear 3s infinite alternate;
 		}
 	}
 	.svg--ab{
 		position: absolute;
-		-webkit-animation: float 6s linear 3s infinite alternate;
-		animation: float 6s linear 3s infinite alternate;
+		-webkit-animation: float 6s linear 1s infinite alternate;
+		animation: float 6s linear 1s infinite alternate;
 		circle{
 			r:50%;
 		}
@@ -71,6 +75,10 @@ main{
 		}
 
 	}
+	@include responsivemd{
+		width: 100vw;
+		overflow: hidden;
+	}
 }
 .works{
 	@include card;
@@ -78,23 +86,53 @@ main{
 		flex-direction: row;
 		align-items:center;
 		margin-bottom:$mt ;
+		@include responsivelg{
+			margin-bottom: 30px;
+		}
+		@include responsivemd{
+			flex-direction: column;
+		}
 		.card__img{
 			min-width: 35%;
 			width: 35%;
 			text-align:left;
+			@include responsivelg{
+				min-width: 350px;
+			}
+			@include responsivemd{
+				width: 100%;
+				min-width: 100%;
+			}
 
 		}
 		img{
 			height: 500px;
 			object-fit: contain;
+			@include responsivelg{
+				height: 400px;
+
+			}
+			@include responsivemd{
+				height: 300px;
+			}
 			// object-position: left;
 		}
 
 		.card__body{
 			padding:0 $mt;
+			@include responsivelg{
+				padding:0 30px;
+			}
+			@include responsivemd{
+				padding: 0;
+			}
+
 
 			& + .card__img{
 				text-align: right;
+				@include responsivemd{
+					order: -1;
+				}
 				img{
 					object-position: right;
 
@@ -105,6 +143,10 @@ main{
 	.bg{
 		border-radius: $mt;
 		padding: 40px;
+		@include responsivemd {
+			border-radius: 16px;
+			padding: 24px;
+		}
 	} 
 	.bg-grey{
 
@@ -115,6 +157,9 @@ main{
 	.card{
 		border-radius: $mt;
 		background-color: #fab8c4;
+		@include responsivemd{
+			border-radius: 16px;
+		}
 		&, .card__img{
 			overflow: visible;
 			img{
@@ -122,14 +167,69 @@ main{
 				object-fit: contain;
 				transform: scale(1.7);
 				transform-origin: left bottom;
+				@include responsivemd{
+					transform: scale(1);
+					height: 100%;
+				}
 			}
 		}
 		button{
 			margin-top: $mt;
+			@include responsivemd{
+				margin-top: 20px;
+			}
 		}
 	}
 }
+.scan{
+	h2{
+		position: relative;
+		z-index: 2;
+	}
+	.circle{
+		height: 500px;
+		width: 500px;
+		border-radius: 50%;
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items:flex-end;
+		background-color:$primary-color;
+		margin-top: -12em;
+		padding-bottom: 8%;
+		@include responsivexlg{
+			margin-top: -8em;
+			@include responsivelg{
+				height: 400px;
+				width: 400px;
+			}
+			@include responsivemd{
+				height: 85vw;
+				width: 85vw;
+			}
+
+		}
+		img{
+			height: 170px;
+			width: auto;
+			@include responsivelg{
+				height: 140px;
+			}
+		}
+	}
+	.section__rule{
+		padding-top: 100px;
+		// padding-bottom: 0 !important;
+			@include responsivemd{
+				padding-top: 0;
+			}
+
+	}
+}
 .other-page{
+	p, .para{
+		font-size: 16px;
+	}
 	.screen{
 		img{
 			width: 100%;
@@ -142,7 +242,12 @@ main{
 		.card__img{
 			margin:2.5em auto;
 		}
+		.card__title{
+			color: #333;
+		}
+		
 	}
+
 }
 
 @import './component_css/footer';

@@ -36,15 +36,15 @@ $wid02:1000px;
 	max-width: 1390px;
 	@include responsivemin(0px){
 		padding: 20px 0;
-		width: 100%;
+		width: 90%;
 	}
 
 	@include responsivemin(760px){
-		// width: 95%;
+		// width: 90%;
 	}
 	
 
-	@include responsivemin(1275px){
+	@include responsivemin(1300px){
 		width:1260px;
 		padding: 60px 0;
 	}
@@ -193,6 +193,10 @@ $wid02:1000px;
 	text-align: left;
 	margin-bottom: 16px	;
 	@include lineclamp(1);
+	@include responsivelg{
+		
+	}
+
 	@include responsivesm{
 		font-size: 15px;
 		-webkit-line-clamp:2;
